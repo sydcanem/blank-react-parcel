@@ -10,7 +10,7 @@ module.exports = {
     "plugin:import/recommended",
     "plugin:prettier/recommended"
   ],
-  plugins: ["react-hooks"],
+  plugins: ["react-hooks", "prettier"],
   globals: {
     Atomics: "readonly",
     SharedArrayBuffer: "readonly"
@@ -21,15 +21,13 @@ module.exports = {
   },
   rules: {
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+    "react-hooks/exhaustive-deps": "warn",
+    "prettier/prettier": ["error", { "singleQuote": true }],
+    quotes: [2, "single", "avoid-escape"]
   },
   settings: {
     react: {
       version: "detect"
     }
-  },
-  rules: {
-    "prettier/prettier": ["error", { "singleQuote": true }],
-    quotes: [2, "single", "avoid-escape"]
   }
 };
